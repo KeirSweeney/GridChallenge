@@ -8,7 +8,7 @@ namespace GridChallenge
 {
     class Program
     {
-        public static int NumberOfEvents = 10;
+        public const int NumberOfEvents = 10;
         List<Coordinates> Events = new List<Coordinates>();
 
 
@@ -16,7 +16,7 @@ namespace GridChallenge
         {
             Grid grid = new Grid(new Coordinates { x = -10, y = -10 }, new Coordinates { x = 10, y = 10 });
 
-            Random r = new Random();
+            Random r = new Random(); //Static Random isn't used here as we don't want the same set of coordinates twice.
 
             for (var i = 0; i < NumberOfEvents; i++)
             {
@@ -26,7 +26,7 @@ namespace GridChallenge
 
                 
 
-                Console.WriteLine(randomXCoord.ToString() +"," + randomYCoord.ToString());
+                Console.WriteLine(randomXCoord.ToString() +"," + randomYCoord.ToString() + " EventID: " + i);
             }
 
 

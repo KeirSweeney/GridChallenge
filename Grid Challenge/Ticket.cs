@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace GridChallenge
 {
-    struct Ticket
+    class Ticket
     {
         public decimal TicketPrice;
+        public Ticket()
+        {
+            Random r = new Random();
+            TicketPrice = (decimal)(r.NextDouble() * 10);
+        }
     }
 }
