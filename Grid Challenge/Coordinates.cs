@@ -2,14 +2,9 @@
 {   /// <summary>
     /// An object of a X and Y coordinate
     /// </summary>
-    class Coordinates
+    struct Coordinates
     {
         public int x;
         public int y;
-        
-        public Coordinates()
-        {
-
-        }
     }
 }
