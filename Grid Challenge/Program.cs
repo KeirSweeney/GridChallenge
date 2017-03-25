@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,9 +25,10 @@ namespace GridChallenge
                 int randomYCoord = r.Next(grid.YMin, grid.YMax);
                 Event myEvent = new Event(new Coordinates { x = randomXCoord, y = randomYCoord }, i);
 
-                
+                var ticketPrice = myEvent.Tickets.FirstOrDefault().TicketPriceString;
 
-                Console.WriteLine(randomXCoord.ToString() +"," + randomYCoord.ToString() + " EventID: " + i);
+                //Console.WriteLine(randomXCoord.ToString() +"," + randomYCoord.ToString() + " EventID: " + i);
+                Console.WriteLine("Event " + myEvent.UniqueID + " - " + ticketPrice);
             }
 
 
