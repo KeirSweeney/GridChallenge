@@ -24,7 +24,7 @@ namespace GridChallenge
                 Ticket ticket = new Ticket();
                 Tickets.Add(ticket);
             }
-            Console.WriteLine("Amount of tickets: " + Tickets.Count);
+            //Console.WriteLine("Amount of tickets: " + Tickets.Count);
         }
     }
 }

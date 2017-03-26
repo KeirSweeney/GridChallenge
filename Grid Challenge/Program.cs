@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace GridChallenge
 {
     class Program
     {
-        public const int NumberOfEvents = 10;
+        private const int NumberOfEvents = 10;
         List<Coordinates> Events = new List<Coordinates>();
 
 
@@ -19,24 +20,52 @@ namespace GridChallenge
 
             Random r = new Random(); //Static Random isn't used here as we don't want the same set of coordinates twice.
 
-            for (var i = 0; i < NumberOfEvents; i++)
+            for (var i = 1; i < NumberOfEvents; i++)
             {
                 int randomXCoord = r.Next(grid.XMin, grid.XMax);
                 int randomYCoord = r.Next(grid.YMin, grid.YMax);
                 Event myEvent = new Event(new Coordinates { x = randomXCoord, y = randomYCoord }, i);
+                //var ticketPrice = myEvent.Tickets.FirstOrDefault().TicketPriceString;
 
-                var ticketPrice = myEvent.Tickets.FirstOrDefault().TicketPriceString;
-
-                //Console.WriteLine(randomXCoord.ToString() +"," + randomYCoord.ToString() + " EventID: " + i);
-                Console.WriteLine("Event " + myEvent.UniqueID + " - " + ticketPrice);
+                ////Console.WriteLine(randomXCoord.ToString() +"," + randomYCoord.ToString() + " EventID: " + i);
+                //Console.WriteLine("Event " + myEvent.UniqueID + " - " + ticketPrice);
             }
-
-
+            Console.WriteLine("Please input Coordinates as two numbers seperated by a comma: ");
+            var userCoords = Console.ReadLine();
+            StringToCoords(userCoords);
             
+            //Console.WriteLine(userCoords);
+
+
             Console.ReadKey();
         }
 
+        private int CalculateDistance(Coordinates userCoords)
+        {
 
+            return 0;
+        }
 
+        private static Coordinates StringToCoords(string userInput)
+        {
+            var matches = Regex.Matches(userInput, @"\d+");
+            int[] coords = new int[2];
+
+            for(int i = 0; i < 2; i++) //only iterate twice as a coordinate can only have an X and Y value
+            {
+                try
+                {
+                    coords[i] = int.Parse(matches[i].ToString());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("You broke the string parser!", ex);
+                }
+            }
+            Console.WriteLine(coords[0].ToString());
+            Console.WriteLine(coords[1].ToString());
+
+            return new Coordinates { x = coords[0], y = coords[1] };
+        }
     }
 }
