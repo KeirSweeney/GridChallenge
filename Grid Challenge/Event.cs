@@ -18,14 +18,21 @@ namespace GridChallenge
             Coord = coord;
             ID = uniqueID;
 
-            var numberOfTickets = StaticRandom.Instance.Next(0, 200);
+            var numberOfTickets = StaticRandom.Instance.Next(0, 30);
 
-            for(int i = 0; i < numberOfTickets; i++)
+
+            for (int i = 0; i < numberOfTickets; i++)
             {
                 Ticket ticket = new Ticket();
                 Tickets.Add(ticket);
             }
-            //Console.WriteLine("Amount of tickets: " + Tickets.Count);
+            Tickets = AcsendingByPrice(Tickets);
+            
+        }
+
+        private List<Ticket> AcsendingByPrice(List<Ticket> tickets)
+        {
+            return tickets.OrderBy(x => x.TicketPrice).ToList();
         }
     }
 }

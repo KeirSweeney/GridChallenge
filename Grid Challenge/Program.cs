@@ -27,8 +27,9 @@ namespace GridChallenge
             }
 
             Console.WriteLine("Please input Coordinates inbetween (-10,-10) & (10,10). Please use a character between each coordinate: ");
-            var userCoords = Console.ReadLine();
-            var distances = CalculateDistance(StringToCoords(userCoords), events);
+            var userString = Console.ReadLine();
+            var userCoords = StringToCoords(userString);
+            var distances = ManhattanDistance(userCoords, events);
             distances = SortEvents(distances);
 
             //for (int x = 0; x < 20; x++)
@@ -46,10 +47,15 @@ namespace GridChallenge
             //        //Console.Write("\n");
             //    }
             //}
+
+            Console.WriteLine("Closest Events to " + "(" + userCoords.x + "," + userCoords.y + "):");
+
             for(int i = 0; i < 5; i++)
             {
-
-                Console.WriteLine("Event " + distances[i].ID + " - " + distances[i].Tickets.OrderBy(x => x.TicketPrice).FirstOrDefault().TicketPriceString + ", " + "Distance " + distances[i].DistanceFromUser);
+                var eventID = "Event " + distances[i].ID + " - ";
+                var cheapestTicketPrice = distances[i].Tickets.FirstOrDefault()?.TicketPriceString + ", " ?? "There are no tickets available for this show!" + ", ";
+                var distanceFromUser = "Distance " + distances[i].DistanceFromUser;
+                Console.WriteLine(eventID + cheapestTicketPrice + distanceFromUser);
             }
 
 
@@ -62,7 +68,7 @@ namespace GridChallenge
         /// <param name="userCoords"></param>
         /// <param name="events"></param>
         /// <returns></returns>
-        private static List<Event> CalculateDistance(Coordinates userCoords, List<Event> events)
+        private static List<Event> ManhattanDistance(Coordinates userCoords, List<Event> events)
         {
             foreach (var currentEvent in events)
             {
@@ -75,7 +81,7 @@ namespace GridChallenge
 
         private static Coordinates StringToCoords(string userInput)
         {
-            var matches = Regex.Matches(userInput, @"-?\d+");
+            var matches = Regex.Matches(userInput, @"-?\d+"); //Matches negative numbers too
             int[] coords = new int[2];
 
             for(int i = 0; i < 2; i++) //only iterate twice as a coordinate can only have an X and Y value
@@ -83,7 +89,6 @@ namespace GridChallenge
                 try
                 {
                     coords[i] = int.Parse(matches[i].ToString());
-                    Console.WriteLine(coords[i]);
                 }
                 catch (Exception ex)
                 {
