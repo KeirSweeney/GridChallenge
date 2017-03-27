@@ -13,7 +13,7 @@ namespace GridChallenge
         public string TicketPriceString;
         public Ticket()
         {
-            TicketPrice = (decimal)(StaticRandom.Instance.NextDouble() * 100);
+            TicketPrice = (decimal)(StaticRandom.Instance.NextDouble() * 20);
             TicketPriceString = TicketPrice.ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
         }
     }

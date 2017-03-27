@@ -9,13 +9,14 @@ namespace GridChallenge
     class Event
     {
         public Coordinates Coord { get; set; }
-        public int UniqueID { get; set; }
+        public int ID { get; set; }
         public List<Ticket> Tickets { get; set; } = new List<Ticket>();
+        public int DistanceFromUser { get; set; }
         
         public Event(Coordinates coord, int uniqueID)
         {
             Coord = coord;
-            UniqueID = uniqueID;
+            ID = uniqueID;
 
             var numberOfTickets = StaticRandom.Instance.Next(0, 200);
 
