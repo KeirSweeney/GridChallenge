@@ -15,8 +15,9 @@ My program:
 
 # Assumptions
 
+- If the world size was significantly bigger, I could lazy load events close to the user input to save processing of all events. Rather than getting/creating all the events on the application entry.
+- To support multiple events at one `Location`, rather than the `Location` being a paramater of `Event`, the `Location` would be an instance, and have `Events` as one of it's properties.
 - Each `Event` can have differently priced individual tickets.
-- To support multiple events at one `Location`, rather than the `Location` being a paramater of `Event`, the `Location` would be an instance, and have `Events` as one of it's properties
 - The user will input two coordinates __(can be signed)__ between (-10,-10) (10,10). There will be a character or space between the two coordinates.
 - The `Event` stores the tickets in ascending order by price.
 - All data is randomly generated per runtime.
