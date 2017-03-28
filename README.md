@@ -37,7 +37,7 @@ Open the __Grid Challenge__ folder after cloning and open the `GridChallenge.sln
 
 Once open use 'F5' or the 'Start' button at the top to run the command line application.
 
-**Alternatively** the zipped Debug folder which holds the `.exe` is available [here].(https://github.com/KeirSweeney/GridChallenge/raw/master/Debug.zip)
+**Alternatively** the zipped Debug folder which holds the `.exe` is available [here](https://github.com/KeirSweeney/GridChallenge/raw/master/Debug.zip)
 
 
 # Author 
