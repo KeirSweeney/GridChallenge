@@ -1,10 +1,17 @@
 ﻿namespace GridChallenge
-{   /// <summary>
+{   
+    /// <summary>
     /// An object of a X and Y coordinate
     /// </summary>
     struct Coordinates
     {
-        public int x;
-        public int y;
+        /// <summary>
+        /// X Coordinate
+        /// </summary>
+        public int X;
+        /// <summary>
+        /// Y Coordinate
+        /// </summary>
+        public int Y;
     }
 }

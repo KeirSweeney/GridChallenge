@@ -1,33 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GridChallenge
 {
     class Event
     {
-        public Coordinates Coord { get; set; }
-        public int ID { get; set; }
-        public List<Ticket> Tickets { get; set; } = new List<Ticket>();
+        public Coordinates Coords { get; set; }
+        public int ID { get; private set; }
+        public List<Ticket> Tickets { get; private set; } = new List<Ticket>();
         public int DistanceFromUser { get; set; }
         
-        public Event(Coordinates coord, int uniqueID)
+        public Event(Coordinates coords, int uniqueID)
         {
-            Coord = coord;
+            Coords = coords;
             ID = uniqueID;
 
             var numberOfTickets = StaticRandom.Instance.Next(0, 30);
-
 
             for (int i = 0; i < numberOfTickets; i++)
             {
                 Ticket ticket = new Ticket();
                 Tickets.Add(ticket);
             }
+
             Tickets = AcsendingByPrice(Tickets);
-            
         }
 
         private List<Ticket> AcsendingByPrice(List<Ticket> tickets)
