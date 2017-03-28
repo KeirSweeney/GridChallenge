@@ -15,7 +15,7 @@ namespace GridChallenge
 
         public Ticket()
         {
-            TicketPrice = (decimal)(StaticRandom.Instance.NextDouble() * 100);
+            TicketPrice = (decimal)((StaticRandom.Instance.NextDouble() + 0.1) * 100); //I add 0.1 so that a ticket cannot be 0 in price
             TicketPriceString = TicketPrice.ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
         }
     }
