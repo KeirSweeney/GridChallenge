@@ -36,7 +36,7 @@ namespace GridChallenge
             for (int i = 0; i < 5; i++)
             {
                 var eventID = "Event " + distances[i].ID + " - ";
-                var cheapestTicketPrice = distances[i].Tickets.FirstOrDefault()?.TicketPriceString + ", " ?? "There are no tickets available for this show!";
+                var cheapestTicketPrice = distances[i].Tickets.Count != 0 ? distances[i].Tickets.FirstOrDefault().TicketPriceString + ", " : "There are no tickets available for this show! ";
                 var distanceFromUser = "Distance " + distances[i].DistanceFromUser;
                 Console.WriteLine(eventID + cheapestTicketPrice + distanceFromUser);
             }
@@ -74,7 +74,7 @@ namespace GridChallenge
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("You broke the string parser - " +  ex.Message);
+                    Console.WriteLine("Invalid coordinate input: " +  ex.Message);
                 }
             }
 
