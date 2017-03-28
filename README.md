@@ -33,12 +33,16 @@ Clone the repo through your CLI:
 
 ```git clone git@github.com:KeirSweeney/GridChallenge.git``` -  or download as a [Zip](https://github.com/KeirSweeney/GridChallenge/archive/master.zip)
 
+
 Open the __Grid Challenge__ folder after cloning and open the `GridChallenge.sln` file.
 
 Once open use 'F5' or the 'Start' button at the top to run the command line application.
 
 **Alternatively** the zipped Debug folder which holds the `.exe` is available [here](https://github.com/KeirSweeney/GridChallenge/raw/master/Debug.zip)
 
+__Please note that I do not recomend you download the Debug zip directly. 
+Windows will protect you from opening it and generally opening unknown `.exe`'s can be dangerous.
+I have hosted this in the case the application won't build on your machine.__
 
 # Author 
 
