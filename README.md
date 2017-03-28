@@ -25,6 +25,12 @@ My program:
 
 # Prerequisites
 
+This was built using a Windows machine. Therefore using the Visual Studio for Mac preview may lead to some issues.
+
+Git will be required to clone the Repo if you choose to do so:
+
+- [**Git**](https://git-scm.com/download/win)
+
 I used Visual Studio Community 17 to create and build this. To build it yourself please use:
 
 - [Visual Studio Community](https://www.visualstudio.com/downloads/?rr=https%3A%2F%2Fwww.google.co.uk%2F)
