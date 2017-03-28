@@ -42,7 +42,7 @@ Once open use 'F5' or the 'Start' button at the top to run the command line appl
 
 __Please note that I do not recomend you download the Debug zip directly. 
 Windows will protect you from opening it and generally opening unknown `.exe`'s can be dangerous.
-I have hosted this in the case the application won't build on your machine.__
+I have hosted this in case the application won't build on your machine.__
 
 # Author 
 
