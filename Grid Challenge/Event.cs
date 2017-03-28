@@ -17,13 +17,16 @@ namespace GridChallenge
 
             var numberOfTickets = StaticRandom.Instance.Next(0, 30);
 
-            for (int i = 0; i < numberOfTickets; i++)
+            if (numberOfTickets != 0)
             {
-                Ticket ticket = new Ticket();
-                Tickets.Add(ticket);
-            }
+                for (int i = 0; i < numberOfTickets; i++)
+                {
+                    Ticket ticket = new Ticket();
+                    Tickets.Add(ticket);
+                }
 
-            Tickets = AcsendingByPrice(Tickets);
+                Tickets = AcsendingByPrice(Tickets);
+            }
         }
 
         private List<Ticket> AcsendingByPrice(List<Ticket> tickets)
