@@ -1,5 +1,8 @@
 ﻿namespace GridChallenge
 {
+    /// <summary>
+    /// Holds the properties of a start and end coordinate pair.
+    /// </summary>
     class Grid
     {
         public int XMin { get; set; }
@@ -8,10 +11,10 @@
         public int YMax { get; set; }
         public Grid(Coordinates gridStartCoords, Coordinates gridEndCoords)
         {
-            XMin = gridStartCoords.x;
-            YMin = gridStartCoords.y;
-            XMax = gridEndCoords.x;
-            YMax = gridEndCoords.y;
+            XMin = gridStartCoords.X;
+            YMin = gridStartCoords.Y;
+            XMax = gridEndCoords.X;
+            YMax = gridEndCoords.Y;
         }
     }
 }

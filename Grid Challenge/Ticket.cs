@@ -1,16 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace GridChallenge
 {
     class Ticket
     {
-        public decimal TicketPrice;
-        public string TicketPriceString;
+        /// <summary>
+        /// Price of the ticket
+        /// </summary>
+        public decimal TicketPrice { get; private set; }
+        /// <summary>
+        /// The ticket price rounded and represented as a string in US dollars
+        /// </summary>
+        public string TicketPriceString { get; private set; }
+
         public Ticket()
         {
             TicketPrice = (decimal)(StaticRandom.Instance.NextDouble() * 100);
