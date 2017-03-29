@@ -8,6 +8,7 @@ namespace GridChallenge
     class Program
     {
         private const int NumberOfEvents = 10;
+        private const int EventDisplayCount = 5;
 
         static void Main(string[] args)
         {
@@ -33,7 +34,7 @@ namespace GridChallenge
 
             Console.WriteLine("Closest Events to " + "(" + userCoords.X + "," + userCoords.Y + "):");
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < EventDisplayCount; i++)
             {
                 var eventID = "Event " + distances[i].ID + " - ";
                 var cheapestTicketPrice = distances[i].Tickets.Count != 0 ? distances[i].Tickets.FirstOrDefault().TicketPriceString + ", " : "There are no tickets available for this show! ";
