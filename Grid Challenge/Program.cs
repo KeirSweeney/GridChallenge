@@ -30,7 +30,7 @@ namespace GridChallenge
 
             Coordinate userCoords = StringToCoords(userString);
             var distances = GetManhattanDistance(userCoords, events);
-            distances = SortEvents(distances);
+            distances = events.OrderBy(x => x.DistanceFromUser).ToList();
 
             Console.WriteLine("Closest Events to " + "(" + userCoords.X + "," + userCoords.Y + "):");
 
@@ -82,14 +82,5 @@ namespace GridChallenge
             return new Coordinate { X = coords[0], Y = coords[1] };
         }
 
-        /// <summary>
-        /// Sorts the events in ascending order of their Manhattan Distance
-        /// </summary>
-        /// <param name="events"></param>
-        /// <returns></returns>
-        private static List<Event> SortEvents(List<Event> events)
-        {
-            return events.OrderBy(x => x.DistanceFromUser).ToList();
-        }
     }
 }
