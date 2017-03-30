@@ -19,8 +19,8 @@ namespace GridChallenge
 
             for (var i = 1; i < NumberOfEvents; i++)
             {
-                int randomXCoord = random.Next(grid.XMin, grid.XMax);
-                int randomYCoord = random.Next(grid.YMin, grid.YMax);
+                int randomXCoord = random.Next(grid.CoordMin.X, grid.CoordMax.X);
+                int randomYCoord = random.Next(grid.CoordMin.Y, grid.CoordMax.Y);
                 Event myEvent = new Event(new Coordinate { X = randomXCoord, Y = randomYCoord }, i);
                 events.Add(myEvent);
             }

@@ -5,16 +5,12 @@
     /// </summary>
     class Grid
     {
-        public int XMin { get; set; }
-        public int YMin { get; set; }
-        public int XMax { get; set; }
-        public int YMax { get; set; }
+        public Coordinate CoordMin { get; set; }
+        public Coordinate CoordMax { get; set; }
         public Grid(Coordinate gridStartCoords, Coordinate gridEndCoords)
         {
-            XMin = gridStartCoords.X;
-            YMin = gridStartCoords.Y;
-            XMax = gridEndCoords.X;
-            YMax = gridEndCoords.Y;
+            CoordMin = new Coordinate { X = gridStartCoords.X, Y = gridStartCoords.Y };
+            CoordMax = new Coordinate { X = gridEndCoords.X, Y = gridEndCoords.Y };
         }
     }
 }
