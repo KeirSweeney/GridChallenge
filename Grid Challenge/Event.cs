@@ -25,13 +25,8 @@ namespace GridChallenge
                     Tickets.Add(ticket);
                 }
 
-                Tickets = AcsendingByPrice(Tickets);
+                Tickets = Tickets.OrderBy(x => x.TicketPrice).ToList();
             }
-        }
-
-        private List<Ticket> AcsendingByPrice(List<Ticket> tickets)
-        {
-            return tickets.OrderBy(x => x.TicketPrice).ToList();
         }
     }
 }
