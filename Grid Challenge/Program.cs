@@ -13,7 +13,7 @@ namespace GridChallenge
         static void Main(string[] args)
         {
 
-            Grid grid = new Grid(new Coordinates {  X = 10, Y = -10 }, new Coordinates { X = 10, Y = 10 });
+            Grid grid = new Grid(new Coordinate {  X = -10, Y = -10 }, new Coordinate { X = 10, Y = 10 });
             List<Event> events = new List<Event>();
             Random random = new Random(); //Static Random isn't used here as we don't want the same set of coordinates twice.
 
@@ -21,14 +21,14 @@ namespace GridChallenge
             {
                 int randomXCoord = random.Next(grid.XMin, grid.XMax);
                 int randomYCoord = random.Next(grid.YMin, grid.YMax);
-                Event myEvent = new Event(new Coordinates { X = randomXCoord, Y = randomYCoord }, i);
+                Event myEvent = new Event(new Coordinate { X = randomXCoord, Y = randomYCoord }, i);
                 events.Add(myEvent);
             }
 
             Console.WriteLine("Please input Coordinates inbetween (-10,-10) & (10,10). Please use a character between each coordinate: ");
             var userString = Console.ReadLine();
 
-            Coordinates userCoords = StringToCoords(userString);
+            Coordinate userCoords = StringToCoords(userString);
             var distances = GetManhattanDistance(userCoords, events);
             distances = SortEvents(distances);
 
@@ -51,7 +51,7 @@ namespace GridChallenge
         /// <param name="userCoords"></param>
         /// <param name="events"></param>
         /// <returns></returns>
-        private static List<Event> GetManhattanDistance(Coordinates userCoords, List<Event> events)
+        private static List<Event> GetManhattanDistance(Coordinate userCoords, List<Event> events)
         {
             foreach (var currentEvent in events)
             {
@@ -62,7 +62,7 @@ namespace GridChallenge
             return events;
         }
 
-        private static Coordinates StringToCoords(string userInput)
+        private static Coordinate StringToCoords(string userInput)
         {
             var matches = Regex.Matches(userInput, @"-?\d+"); //Any digit ,negative or positive
             int[] coords = new int[2];
@@ -79,7 +79,7 @@ namespace GridChallenge
                 }
             }
 
-            return new Coordinates { X = coords[0], Y = coords[1] };
+            return new Coordinate { X = coords[0], Y = coords[1] };
         }
 
         /// <summary>

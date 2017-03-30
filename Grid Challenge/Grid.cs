@@ -9,7 +9,7 @@
         public int YMin { get; set; }
         public int XMax { get; set; }
         public int YMax { get; set; }
-        public Grid(Coordinates gridStartCoords, Coordinates gridEndCoords)
+        public Grid(Coordinate gridStartCoords, Coordinate gridEndCoords)
         {
             XMin = gridStartCoords.X;
             YMin = gridStartCoords.Y;

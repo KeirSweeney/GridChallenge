@@ -3,7 +3,7 @@
     /// <summary>
     /// An object of a X and Y coordinate
     /// </summary>
-    struct Coordinates
+    struct Coordinate
     {
         /// <summary>
         /// X Coordinate

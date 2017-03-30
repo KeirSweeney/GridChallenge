@@ -5,12 +5,12 @@ namespace GridChallenge
 {
     class Event
     {
-        public Coordinates Coords { get; set; }
+        public Coordinate Coords { get; set; }
         public int ID { get; private set; }
         public List<Ticket> Tickets { get; private set; } = new List<Ticket>();
         public int DistanceFromUser { get; set; }
         
-        public Event(Coordinates coords, int uniqueID)
+        public Event(Coordinate coords, int uniqueID)
         {
             Coords = coords;
             ID = uniqueID;
