@@ -21,8 +21,7 @@ namespace GridChallenge
             {
                 for (int i = 0; i < numberOfTickets; i++)
                 {
-                    Ticket ticket = new Ticket();
-                    Tickets.Add(ticket);
+                    Tickets.Add(new Ticket());
                 }
 
                 Tickets = Tickets.OrderBy(x => x.TicketPrice).ToList();
